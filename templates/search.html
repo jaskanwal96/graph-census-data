@@ -1,0 +1,120 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+<div ng-controller="SearchController">
+    <form class="form-group border" style="margin: 10px" ng-submit="submit()">
+        <div class="container">
+        <span class="font-weight-bold">Sex:</span>
+        <div class="sex-check">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="sex1" value=" Male">Male
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="sex2" value=" Female">Female
+                </label>
+            </div>
+        </div>
+        <hr>
+        <span class="font-weight-bold">Relationship:</span>
+        <div class="rel-check">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel1" value=" Unmarried">Unmarried
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel2" value=" Own Child">Own
+                    Child
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel3" value=" Wife">Wife
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel4" value=" Husband">Husband
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel5" value=" Other-Relative">Other-Relative
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="rel6" value=" Not In Family">Not
+                    In Family
+                </label>
+            </div>
+        </div>
+        <hr>
+        <span class="font-weight-bold">Race:</span>
+        <div class="race-check">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="race1" value=" White">White
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="race2" value=" Black">Black
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="race3" value=" Asian-Pac-Islander">Asian-Pac-Islander
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="race4" value="false">Amer-Indian-Eskimo
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="race5" value="false">Other
+                </label>
+            </div>
+
+        </div>
+        <hr>
+        <input style="margin:auto;display: block;margin-bottom:10px;" class="btn btn-outline-success" type="submit" value="Submit">
+    </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Workclass</th>
+                <th>Education</th>
+                <th>Occupation</th>
+                <th>Relationship</th>
+                <th>Race</th>
+                <th>Native Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="field in fields">
+                <td>{[{field.age}]}</td>
+                <td>{[{field.sex}]}</td>
+                <td>{[{field.workclass}]}</td>
+                <td>{[{field.education}]}</td>
+                <td>{[{field.occupation}]}</td>
+                <td>{[{field.relationship}]}</td>
+                <td>{[{field.race}]}</td>
+                <td>{[{field.native_country}]}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
